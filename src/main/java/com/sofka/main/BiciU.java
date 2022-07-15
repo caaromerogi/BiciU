@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class BiciU {
     public static void main(String[] args) {
-        File file = new File("test.txt");
+        File file = new File("src//main//Data//test.txt");
         try {
             file.createNewFile();
         } catch (IOException e) {
