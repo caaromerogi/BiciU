@@ -1,7 +1,8 @@
 package com.sofka.menu;
+import com.sofka.IO.IO;
 import com.sofka.entities.Professor;
 import com.sofka.entities.Student;
-import com.sofka.serializer.Serializer;
+import com.sofka.IO.Serializer;
 import com.sofka.abstractclasses.User;
 
 import java.util.Scanner;
@@ -9,8 +10,6 @@ import java.util.Scanner;
 public class CreateUser {
 
     public static void menu(){
-        Serializer<User> serializer= new Serializer<User>();
-        String path = "src\\main\\resources\\data\\users\\users.txt";
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce S for Student or P for Professor");
         String optionInput = scanner.nextLine();
@@ -25,7 +24,7 @@ public class CreateUser {
                 //Instantiates a student
                 User student = new Student(sDNI, sName, sAge);
                 //write object in txt
-                serializer.serialize(path, student);
+                IO.writeUser(student);
                 System.out.println("Usurio registrado correctamente");
                 //BiciU.mainMenu();
                 break;
@@ -39,7 +38,7 @@ public class CreateUser {
                 //Instantiates a professor
                 User professor = new Professor(pDNI, pName, pAge);
                 //Write object in txt
-                serializer.serialize(path, professor);
+                IO.writeUser(professor);
                 System.out.println("Usurio registrado correctamente");
                 //BiciU.mainMenu();
                 break;

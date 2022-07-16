@@ -1,13 +1,8 @@
 package com.sofka.test;
 
-import com.sofka.abstractclasses.User;
 import com.sofka.entities.Bicycle;
-import com.sofka.menu.CreateUser;
-import com.sofka.serializer.Deserializer;
-import com.sofka.serializer.Serializer;
+import com.sofka.IO.Deserializer;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 
@@ -121,18 +116,7 @@ public class Test {
         bicycles.add(b23);
         bicycles.add(b24);
         bicycles.add(b25);
-        System.out.println("siu");
-        /*
-        for (Bicycle b: bicycles) {
-            System.out.println("siu");
-            String path = "src\\main\\resources\\data\\bicycles\\bicycles.txt";
-            Serializer<Bicycle> serializer= new Serializer<>();
-            serializer.serialize(path, b);
 
-        }*/
-        Deserializer<Bicycle> deserializer= new Deserializer<>();
-        String path = "src\\main\\resources\\data\\bicycles\\bicycles.txt";
-        System.out.println(deserializer.deserialize(path));
 
 
     }

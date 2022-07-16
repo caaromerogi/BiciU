@@ -1,35 +1,29 @@
 package com.sofka.menu;
 
+import com.sofka.IO.IO;
 import com.sofka.entities.Bicycle;
 import com.sofka.entities.Ticket;
 import com.sofka.filter.Filter;
-import com.sofka.serializer.Deserializer;
-import com.sofka.serializer.Serializer;
-
+import com.sofka.IO.Deserializer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
 public class BorrowBicycle {
-    //NO HACER METODOS ESTÁTICOS, MEJOR INSTANCIAR NEW BORROWBICYCLE.METODO
-    public void menu(){
-        Deserializer<Ticket> deserializer = new Deserializer<>();
-        Serializer<Ticket> serializer = new Serializer<>();
-        ArrayList<Ticket> tickets = new ArrayList<>();
-        String path = "src\\main\\resources\\data\\tickets\\tickets.txt";
 
-        tickets = deserializer.deserialize(path);
+    public void menu(){
+        ArrayList<Ticket> tickets = IO.readTickets();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce your ID: ");
         String inputId = scanner.nextLine();
-        //Check doubt
-        //iterator object
+
         Iterator<Ticket> ticket = tickets.iterator();
         while (ticket.hasNext()) {
             if (ticket.next().getId().equalsIgnoreCase(inputId) && ticket.next().getStatus().equalsIgnoreCase("pending") && ticket.next().getAmount()>0){
-
+                //mostrar la deuda
+                System.out.println("You have a doubt. Ticket ID: "+ticket.next().getId());
             }else {
                 returnBicycleType();
             }
@@ -54,30 +48,29 @@ public class BorrowBicycle {
                 break;
             default:
                 returnBicycleType();
+                assignTicket();
                 break;
         }
     }
 
     private Bicycle getBicycle(Predicate<Bicycle> predicate) {
         //Get the bicycles array from txt
-        Deserializer<Bicycle> deserializer = new Deserializer<>();
-        Serializer<Bicycle> serializer = new Serializer<>();
-        ArrayList<Bicycle> bicycles = new ArrayList<>();
+        ArrayList<Bicycle> bicycles = IO.readBicycles();
 
         //Instantiates filter object
         Filter<Bicycle> filter = new Filter<>();
 
-        String path = "src\\main\\resources\\data\\bicycles\\bicycles.txt";
-        bicycles = deserializer.deserialize(path);
-        Bicycle bicycle = filter.filterBicycleByType(bicycles, predicate);
+        Bicycle bicycle = filter.filterRandomBicycleByType(bicycles, predicate);
 
         if(bicycle == null){
             System.out.println("There are no "+ bicycle.getType() + " available");
             returnBicycleType();
         }
-
         return bicycle;
     }
 
+    private void assignTicket(){
+
+    }
 
 }

@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class Filter<T> {
     //Bicycle filter
-    public T filterBicycleByType(ArrayList<T> array, Predicate<T> predicate){
+    public T filterRandomBicycleByType(ArrayList<T> array, Predicate<T> predicate){
         ArrayList<T> filteredArray = new ArrayList<T>();
         Iterator<T> it = array.iterator();
         while (it.hasNext()) {

@@ -1,4 +1,4 @@
-package com.sofka.serializer;
+package com.sofka.IO;
 import java.io.*;
 import java.util.ArrayList;
 
