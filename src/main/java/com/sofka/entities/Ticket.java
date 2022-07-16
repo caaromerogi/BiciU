@@ -25,7 +25,7 @@ public class Ticket implements Serializable {
         this.endTime = "-";
         this.haveHelmet = true;
         this.isInGoodCondition = true;
-        this.status = "pending";
+        this.status = "active";
         this.amount = 0;
     }
 

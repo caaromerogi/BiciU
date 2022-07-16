@@ -4,6 +4,7 @@ import com.sofka.entities.abstractclasses.User;
 import com.sofka.entities.Bicycle;
 import com.sofka.entities.Ticket;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -46,5 +47,13 @@ public class IO {
         while (it.hasNext()) {
             serializer.serialize(path, it.next());
         }
+    }
+
+    public static void updateBicycle(ArrayList<Bicycle> bicycles){
+        String path = "src\\main\\resources\\data\\bicycles\\bicycles.txt";
+        File file = new File(path);
+        file.delete();
+
+        IO.writeBicycle(bicycles);
     }
 }

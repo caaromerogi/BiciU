@@ -17,8 +17,6 @@ public class Filter<T> {
                 filteredArray.add(object);
             }
         }
-        System.out.println(filteredArray);
-        System.out.println(filteredArray.size());
 
         Random random = new Random();
         int int_random = random.nextInt(filteredArray.size());

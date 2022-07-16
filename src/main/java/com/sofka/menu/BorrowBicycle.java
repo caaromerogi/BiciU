@@ -8,7 +8,6 @@ import com.sofka.utils.filter.Filter;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
@@ -28,17 +27,17 @@ public class BorrowBicycle {
         inputId = scanner.nextLine();
         filter.filterUserById(users,inputId);
 
-        //Checking if user has a doubt
-        Iterator<Ticket> ticket = tickets.iterator();
-        while (ticket.hasNext()) {
-            if (ticket.next().getId().equalsIgnoreCase(inputId)
-                    && ticket.next().getStatus().equals("pending")
-                    && ticket.next().getAmount()>0)
+        for (Ticket t:tickets) {
+            if (t.getUser().getId().equalsIgnoreCase(inputId)
+                && t.getStatus().equalsIgnoreCase("pending"))
             {
-                System.out.println("You have a doubt. Ticket ID: "+ ticket.next().getId()+
-                        "\nAmount: "+ ticket.next().getAmount());
-            }else{
-                returnBicycleType();
+                System.out.println("You have a doubt. Ticket ID: "+ t.getId()+
+                        "\nAmount: "+ t.getAmount());
+                BiciU.mainMenu();
+            }
+            else if (t.getUser().getId().equalsIgnoreCase(inputId) && t.getStatus().equalsIgnoreCase("active")) {
+                System.out.println("You have an active bicycle, please return it back to continue");
+                BiciU.mainMenu();
             }
         }
         returnBicycleType();
@@ -51,13 +50,15 @@ public class BorrowBicycle {
         switch (bicycleTypeSelected.toUpperCase()){
             case "M":
                 selectedBicycle = getMountainBicycle();
+                updateBicycleState(selectedBicycle);
                 assignTicket();
-                scanner.close();
+                BiciU.mainMenu();
                 break;
             case "R":
                 selectedBicycle = getRoadBicycle();
-                scanner.close();
+                updateBicycleState(selectedBicycle);
                 assignTicket();
+                BiciU.mainMenu();
                 break;
             default:
                 returnBicycleType();
@@ -100,6 +101,16 @@ public class BorrowBicycle {
         IO.writeTicket(ticket);
         System.out.println(IO.readTickets());
         //msg created
+
+    }
+
+    private void updateBicycleState(Bicycle bicycle){
+        for (Bicycle b:bicycles) {
+            if(b.getId().equalsIgnoreCase(bicycle.getId())){
+                b.setAvailable(false);
+            }
+        }
+        IO.updateBicycle(bicycles);
 
     }
 

@@ -126,8 +126,7 @@ public class Test {
         bicycles.add(b24);
         bicycles.add(b25);
 
-        //IO.writeBicycle(bicycles);
-        //System.out.println(IO.readBicycles());
+
 
 
         /*
@@ -158,6 +157,8 @@ public class Test {
         //diff/1800000 math.floor
 
          */
+        //IO.writeBicycle(bicycles);
+        //System.out.println(IO.readBicycles());
         BorrowBicycle b = new BorrowBicycle();
         b.menu();
     }

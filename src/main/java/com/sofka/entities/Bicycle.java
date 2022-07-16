@@ -39,6 +39,10 @@ public class Bicycle implements Serializable {
         return color;
     }
 
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
     public boolean isAvailable() {
         return isAvailable;
     }
