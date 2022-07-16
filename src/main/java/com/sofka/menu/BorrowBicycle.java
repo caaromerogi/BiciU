@@ -41,6 +41,9 @@ public class BorrowBicycle {
 
         switch (inputId.toUpperCase()){
             case "M":
+                //check availability
+                //deserializar
+                //for
                 break;
             case "R":
                 break;
