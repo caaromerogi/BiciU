@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class BiciU {
 
     public static void mainMenu(){
+        System.out.println("Menu 1. create");
         Scanner scanner = new Scanner(System.in);
         String optionInput = scanner.nextLine();
         switch (optionInput) {
             case "1":
-                //CreateUser.menu();
+                CreateUser.menu();
                 break;
             case "2" :
-                //borrowBicycleMenu();
+                new BorrowBicycle().menu();
                 break;
             case "3":
                 //returnBicycleMenu();

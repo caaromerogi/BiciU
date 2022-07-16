@@ -1,9 +1,8 @@
 package com.sofka.menu;
-import com.sofka.IO.IO;
+import com.sofka.utils.IO.IO;
 import com.sofka.entities.Professor;
 import com.sofka.entities.Student;
-import com.sofka.IO.Serializer;
-import com.sofka.abstractclasses.User;
+import com.sofka.entities.abstractclasses.User;
 
 import java.util.Scanner;
 
@@ -23,10 +22,11 @@ public class CreateUser {
                 String sAge = scanner.nextLine();
                 //Instantiates a student
                 User student = new Student(sDNI, sName, sAge);
+                System.out.println(student.getId());
                 //write object in txt
                 IO.writeUser(student);
                 System.out.println("Usurio registrado correctamente");
-                //BiciU.mainMenu();
+                BiciU.mainMenu();
                 break;
             case "P":
                 System.out.println("Introduce your DNI:");
@@ -39,11 +39,12 @@ public class CreateUser {
                 User professor = new Professor(pDNI, pName, pAge);
                 //Write object in txt
                 IO.writeUser(professor);
-                System.out.println("Usurio registrado correctamente");
-                //BiciU.mainMenu();
+                System.out.println("Usuario registrado correctamente");
+                BiciU.mainMenu();
                 break;
             default:
                 menu();
+                break;
         }
     }
 }

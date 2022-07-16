@@ -1,10 +1,10 @@
 package com.sofka.entities;
 
-import com.sofka.abstractclasses.User;
+import com.sofka.entities.abstractclasses.User;
 
 import java.io.Serializable;
 
-public class Ticket implements Serializable{
+public class Ticket implements Serializable {
     private String id;
     private Bicycle bicycle;
     private User user;
@@ -16,8 +16,8 @@ public class Ticket implements Serializable{
     private String status;
     private int amount;
 
-    public Ticket(String id, Bicycle bicycle, User user, String date, String startTime) {
-        this.id = id;
+    public Ticket(int position, Bicycle bicycle, User user, String date, String startTime) {
+        setId(position+1);
         this.bicycle = bicycle;
         this.user = user;
         this.date = date;
@@ -43,6 +43,11 @@ public class Ticket implements Serializable{
                 ", status='" + status + '\'' +
                 ", amount=" + amount +
                 '}';
+    }
+
+
+    public void setId(int id) {
+        this.id = "T-"+ String.format("%03d", id);
     }
 
     public void setEndTime(String endTime) {
@@ -104,4 +109,6 @@ public class Ticket implements Serializable{
     public int getAmount() {
         return amount;
     }
+
+
 }

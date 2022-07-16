@@ -1,8 +1,8 @@
-package com.sofka.abstractclasses;
+package com.sofka.entities.abstractclasses;
 
 import java.io.Serializable;
 
-public abstract class User implements Serializable {
+public abstract class User implements Serializable  {
     protected String id;
     protected String DNI;
     protected String name;
@@ -10,10 +10,10 @@ public abstract class User implements Serializable {
 
 
     public User(String DNI, String name, String age) {
+        setId();
         this.DNI = DNI;
         this.name = name;
         this.age = age;
-        setId();
     }
 
     @Override
@@ -27,4 +27,20 @@ public abstract class User implements Serializable {
     }
 
     protected abstract void setId();
+
+    public String getId() {
+        return id;
+    }
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAge() {
+        return age;
+    }
 }

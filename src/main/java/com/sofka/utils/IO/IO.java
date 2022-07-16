@@ -1,18 +1,23 @@
-package com.sofka.IO;
+package com.sofka.utils.IO;
 
-import com.sofka.abstractclasses.User;
+import com.sofka.entities.abstractclasses.User;
 import com.sofka.entities.Bicycle;
 import com.sofka.entities.Ticket;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.Iterator;
 
 public class IO {
     public static void writeUser(User user){
         String path = "src\\main\\resources\\data\\users\\users.txt";
         Serializer<User> serializer= new Serializer<User>();
         serializer.serialize(path, user);
+    }
+
+    public static ArrayList<User> readUser(){
+        String path = "src\\main\\resources\\data\\users\\users.txt";
+        Deserializer<User> deserializer = new Deserializer<>();
+        return deserializer.deserialize(path);
     }
 
     public static void writeTicket(Ticket ticket){
@@ -25,16 +30,21 @@ public class IO {
     public static ArrayList<Ticket> readTickets(){
         String path = "src\\main\\resources\\data\\tickets\\tickets.txt";
         Deserializer<Ticket> deserializer = new Deserializer<>();
-        ArrayList<Ticket> tickets = deserializer.deserialize(path);
-        return tickets;
+        return deserializer.deserialize(path);
     }
 
     public static ArrayList<Bicycle> readBicycles(){
         Deserializer<Bicycle> deserializer = new Deserializer<>();
-        ArrayList<Bicycle> bicycles = new ArrayList<>();
         String path = "src\\main\\resources\\data\\bicycles\\bicycles.txt";
-        bicycles = deserializer.deserialize(path);
+        return deserializer.deserialize(path);
+    }
 
-        return bicycles;
+    public static void writeBicycle(ArrayList<Bicycle> bicycles){
+        Serializer<Bicycle> serializer = new Serializer<>();
+        String path = "src\\main\\resources\\data\\bicycles\\bicycles.txt";
+        Iterator<Bicycle> it = bicycles.iterator();
+        while (it.hasNext()) {
+            serializer.serialize(path, it.next());
+        }
     }
 }
