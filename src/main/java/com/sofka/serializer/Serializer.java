@@ -24,6 +24,7 @@ public class Serializer<T> {
 
         }else{
             try {
+                file.createNewFile();
                 FileOutputStream fileOutput = new FileOutputStream(path);
                 ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
                 objectOutput.writeObject(object);
