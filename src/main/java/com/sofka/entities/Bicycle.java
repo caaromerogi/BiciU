@@ -1,4 +1,4 @@
-package com.sofka.test;
+package com.sofka.entities;
 
 import java.io.Serializable;
 

@@ -10,7 +10,6 @@ public class Serializer<T> {
         ArrayList<T> array = new ArrayList<>();
 
         if (file.length() != 0) {
-            System.out.println("Longitud no es cero");
             array = deserializer.deserialize(path);
             array.add(object);
             try {
@@ -26,7 +25,6 @@ public class Serializer<T> {
 
         if (file.length() == 0) {
             try {
-                System.out.println("Longitud 0");
                 FileOutputStream fileOutput = new FileOutputStream(path);
                 ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
                 objectOutput.writeObject(object);

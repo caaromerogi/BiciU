@@ -1,9 +1,9 @@
 package com.sofka.test;
 
+import com.sofka.abstractclasses.User;
 import com.sofka.menu.CreateUser;
 import com.sofka.serializer.Deserializer;
 
-import java.io.*;
 
 public class Test {
     public static void main(String[] args) {

@@ -9,7 +9,7 @@ public class BiciU {
         String optionInput = scanner.nextLine();
         switch (optionInput) {
             case "1":
-                //createUserMenu();
+                CreateUser.menu();
                 break;
             case "2" :
                 //borrowBicycleMenu();
