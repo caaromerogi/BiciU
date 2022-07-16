@@ -15,6 +15,8 @@ public class Bicycle implements Serializable {
         this.isAvailable = isAvailable;
     }
 
+
+
     @Override
     public String toString() {
         return "Bicycle{" +
@@ -23,5 +25,21 @@ public class Bicycle implements Serializable {
                 ", color='" + color + '\'' +
                 ", isAvailable=" + isAvailable +
                 '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
     }
 }
