@@ -45,8 +45,63 @@ public class Ticket implements Serializable{
                 '}';
     }
 
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setHaveHelmet(boolean haveHelmet) {
+        this.haveHelmet = haveHelmet;
+    }
+
+    public void setInGoodCondition(boolean inGoodCondition) {
+        isInGoodCondition = inGoodCondition;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
     public User getUser() {
         return user;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public Bicycle getBicycle() {
+        return bicycle;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public boolean isHaveHelmet() {
+        return haveHelmet;
+    }
+
+    public boolean isInGoodCondition() {
+        return isInGoodCondition;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
 }
