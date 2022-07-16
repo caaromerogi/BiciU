@@ -5,21 +5,25 @@ import com.sofka.menu.BiciU;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.function.Predicate;
 
 public class Filter<T> {
     //Bicycle filter
     public T filterRandomBicycleByType(ArrayList<T> array, Predicate<T> predicate){
         ArrayList<T> filteredArray = new ArrayList<T>();
-        Iterator<T> it = array.iterator();
-        while (it.hasNext()) {
-            if (predicate.test((T)it.next())){
-                filteredArray.add(it.next());
+        for (T object: array) {
+            if (predicate.test(object)) {
+                filteredArray.add(object);
             }
         }
-        int index = (int) Math.random()*filteredArray.size();
+        System.out.println(filteredArray);
+        System.out.println(filteredArray.size());
 
-        return filteredArray.get(index);
+        Random random = new Random();
+        int int_random = random.nextInt(filteredArray.size());
+
+        return filteredArray.get(int_random);
     }
 
     public User filterUserById(ArrayList<User> users, String id){
