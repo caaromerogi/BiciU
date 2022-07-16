@@ -9,7 +9,7 @@ public class Serializer<T> {
         File file = new File(path);
         ArrayList<T> array = new ArrayList<>();
 
-        if (file.length() != 0) {
+        if (file.exists()) {
             array = deserializer.deserialize(path);
             array.add(object);
             try {
@@ -21,9 +21,8 @@ public class Serializer<T> {
             }catch (Exception e) {
                 e.printStackTrace();
             }
-        }
 
-        if (file.length() == 0) {
+        }else{
             try {
                 FileOutputStream fileOutput = new FileOutputStream(path);
                 ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
@@ -34,5 +33,6 @@ public class Serializer<T> {
                 e.printStackTrace();
             }
         }
+
     }
 }

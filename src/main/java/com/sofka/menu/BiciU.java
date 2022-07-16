@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class BiciU {
 
-    public void mainMenu(){
+    public static void mainMenu(){
         Scanner scanner = new Scanner(System.in);
         String optionInput = scanner.nextLine();
         switch (optionInput) {
             case "1":
-                CreateUser.menu();
+                //CreateUser.menu();
                 break;
             case "2" :
                 //borrowBicycleMenu();

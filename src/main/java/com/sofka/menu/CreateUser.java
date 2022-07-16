@@ -26,6 +26,8 @@ public class CreateUser {
                 User student = new Student(sDNI, sName, sAge);
                 //write object in txt
                 serializer.serialize(path, student);
+                System.out.println("Usurio registrado correctamente");
+                //BiciU.mainMenu();
                 break;
             case "P":
                 System.out.println("Introduce your DNI:");
@@ -38,6 +40,8 @@ public class CreateUser {
                 User professor = new Professor(pDNI, pName, pAge);
                 //Write object in txt
                 serializer.serialize(path, professor);
+                System.out.println("Usurio registrado correctamente");
+                //BiciU.mainMenu();
                 break;
             default:
                 menu();
