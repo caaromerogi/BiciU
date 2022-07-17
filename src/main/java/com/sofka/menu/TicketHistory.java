@@ -10,8 +10,8 @@ import java.util.function.Predicate;
 
 public class TicketHistory {
     Scanner scanner = new Scanner(System.in);
-
     Filter filter = new Filter();
+    ArrayList<Ticket> tickets = IO.readTickets();
     public void menu(){
         System.out.println("5.1 Show all tickets\n" +
                 "5.2 Search by code\n" +
@@ -22,25 +22,27 @@ public class TicketHistory {
             case "5.1":
                 tableAllTickets();
                 System.out.println("--------------------");
-                BiciUMenu.mainMenu();
+                new BiciUMenu().mainMenu();
                 break;
             case "5.2":
                 tableSearchByCode();
                 System.out.println("--------------------");
-                BiciUMenu.mainMenu();
+                new BiciUMenu().mainMenu();
                 break;
             case "5.3":
                 tableSearchByStatus();
                 System.out.println("--------------------");
-                BiciUMenu.mainMenu();
+                new BiciUMenu().mainMenu();
                 break;
             default:
                 menu();
+                break;
         }
     }
 
     private void tableAllTickets(){
-        ArrayList<Ticket> tickets = IO.readTickets();
+
+        System.out.println("en history: "+tickets);
         System.out.println("  Code     |  User ID        |   Name        |   Amount ($)  |   Status    ");
         for (Ticket ticket : tickets) {
             System.out.println("  "+ticket.getId()+"       "+ticket.getUser().getId()+"     "+ticket.getUser().getName()+"          "+ticket.getAmount()+"             "+ticket.getStatus());
@@ -48,7 +50,6 @@ public class TicketHistory {
     }
 
     private  void tableSearchByStatus(){
-        ArrayList<Ticket> tickets = IO.readTickets();
         System.out.println("Insert status to filter");
         String status = scanner.nextLine();
         System.out.println("  Code     |  User ID        |   Name        |   Amount ($)  |   Status    ");
@@ -60,7 +61,6 @@ public class TicketHistory {
     }
 
     private  void tableSearchByCode(){
-        ArrayList<Ticket> tickets = IO.readTickets();
         System.out.println("Insert code to filter");
         String code = scanner.nextLine();
         System.out.println("  Code     |  User ID        |   Name        |   Amount ($)  |   Status    ");

@@ -18,6 +18,8 @@ public class Serializer<T> {
                 for (T obj : array) {
                     objectOutput.writeObject(obj);
                 }
+                objectOutput.close();
+                fileOutput.close();
             }catch (Exception e) {
                 e.printStackTrace();
             }

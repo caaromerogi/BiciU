@@ -51,20 +51,24 @@ public class BorrowBicycle {
             case "M":
                 selectedBicycle = getMountainBicycle();
                 updateBicycleState(selectedBicycle);
-                assignTicket();
-                BiciUMenu.mainMenu();
                 System.out.println("Borrow bicycle successful");
+                System.out.println("Selected bicycle: ");
                 System.out.println(selectedBicycle);
+                System.out.println("\n---------------------");
+                assignTicket();
                 System.out.println("\n---------------------------");
+                new BiciUMenu().mainMenu();
                 break;
             case "R":
                 selectedBicycle = getRoadBicycle();
                 updateBicycleState(selectedBicycle);
-                assignTicket();
-                BiciUMenu.mainMenu();
                 System.out.println("Borrow bicycle successful");
+                System.out.println("Selected bicycle: ");
                 System.out.println(selectedBicycle);
+                System.out.println("\n---------------------");
+                assignTicket();
                 System.out.println("\n---------------------------");
+                new BiciUMenu().mainMenu();
                 break;
             default:
                 returnBicycleType();
@@ -105,7 +109,7 @@ public class BorrowBicycle {
 
         Ticket ticket = new Ticket(tickets.size(), selectedBicycle, user,nowDate,nowTime);
         IO.writeTicket(ticket);
-        System.out.println(IO.readTickets());
+        System.out.println(ticket);
         //msg created
 
     }
@@ -118,5 +122,6 @@ public class BorrowBicycle {
         }
         IO.updateBicycle(bicycles);
     }
+
 
 }

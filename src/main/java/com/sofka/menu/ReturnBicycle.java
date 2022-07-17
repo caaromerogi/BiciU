@@ -16,16 +16,14 @@ public class ReturnBicycle {
     Ticket ticket;
     //Instantiates filter class to execute filters
     Filter<Bicycle> filter = new Filter<>();
-    Bicycle bicycle;
-    String inputId;
+
     public void menu(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insert ticket id: ");
         String inputTicketId = scanner.nextLine();
         scanner.nextLine();
-        filter.filterTicketById(tickets, inputTicketId);
-        for (Ticket t:tickets) {
-            if (t.getId().equalsIgnoreCase(inputTicketId)) {
+        for (Ticket t :tickets) {
+            if(t.getId().equalsIgnoreCase(inputTicketId)){
                 System.out.println("Insert if have helmet (true - false): ");
                 boolean haveHelmet =scanner.nextBoolean();
                 scanner.nextLine();
@@ -41,17 +39,19 @@ public class ReturnBicycle {
                 t.setInGoodCondition(isInGoodCondition);
                 t.setHaveHelmet(haveHelmet);
                 t.confirmStatus();
-                //Change status of Bicycle
-                bicycle = t.getBicycle();
-                ticket = t;
-
             }
         }
-        updateBicycleState(bicycle);
-        ticket.setBicycle(bicycle);
+
+
+        System.out.println(tickets);
+        System.out.println("despues de cambiar: "+IO.readTickets());
+
         IO.updateTickets(tickets);
-        System.out.println("Bicycle return successful\n" +
-                "-----------------------\n");
+        System.out.println("Lector: "+IO.readTickets());
+
+        System.out.println("Lector 2: "+IO.readTickets());
+        //System.out.println("Bicycle " +ticket.getBicycle().getId()+  " returned successfully\n" +
+          //      "-----------------------\n");
         BiciUMenu.mainMenu();
 
     }

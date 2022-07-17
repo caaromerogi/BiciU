@@ -36,7 +36,7 @@ public class BiciUMenu {
                 System.exit(0);
                 break;
             default :
-                mainMenu();
+                new BiciUMenu().mainMenu();
                 break;
         }
     }

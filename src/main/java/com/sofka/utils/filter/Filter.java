@@ -32,7 +32,7 @@ public class Filter<T> {
             }
         }
         System.out.println("The user id inserted doesn't exist");
-        BiciUMenu.mainMenu();
+        new BiciUMenu().mainMenu();
         return null;
     }
 
@@ -45,7 +45,7 @@ public class Filter<T> {
             }
         }
         System.out.println("The ticket id inserted doesn't exist");
-        BiciUMenu.mainMenu();
+        new BiciUMenu().mainMenu();
         return null;
     }
 

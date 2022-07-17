@@ -5,9 +5,14 @@
 package com.sofka.test;
 
 
+import com.sofka.entities.Bicycle;
+import com.sofka.utils.IO.IO;
+
+import java.util.ArrayList;
+
 public class Test {
     public static void main(String[] args) {
-        /*
+
         ArrayList<Bicycle> bicycles = new ArrayList<>();
 
         Bicycle b1 = new Bicycle("BIC-01", "Mountain", "red", true);
@@ -83,7 +88,8 @@ public class Test {
         bicycles.add(b23);
         bicycles.add(b24);
         bicycles.add(b25);
-        */
+
+
 
 
 
@@ -115,8 +121,8 @@ public class Test {
         //diff/1800000 math.floor
 
          */
-        //IO.writeBicycle(bicycles);
-        //System.out.println(IO.readBicycles());
+        IO.writeBicycle(bicycles);
+        System.out.println(IO.readBicycles());
         //System.out.println(IO.readTickets());
         //System.out.println(IO.readUser());
         //BiciU.mainMenu();

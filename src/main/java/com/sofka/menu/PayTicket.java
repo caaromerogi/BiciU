@@ -31,12 +31,12 @@ public class PayTicket {
                     System.out.println(IO.readTickets());
                     System.out.println("Ticked "+ticket.getId()+" paid");
                     System.out.println("-----------------------\n");
-                    BiciUMenu.mainMenu();
+                    new BiciUMenu().mainMenu();
                     break;
                 case "N":
                     System.out.println("\nReturning back to main menu...\n" +
                             "------------------------");
-                    BiciUMenu.mainMenu();
+                    new BiciUMenu().mainMenu();
                     break;
                 default :
                     menu();
