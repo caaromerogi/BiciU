@@ -86,6 +86,9 @@ public class Ticket implements Serializable {
         this.status = status;
     }
 
+    public void setBicycle(Bicycle bicycle) {
+        this.bicycle = bicycle;
+    }
 
     public User getUser() {
         return user;

@@ -53,12 +53,18 @@ public class BorrowBicycle {
                 updateBicycleState(selectedBicycle);
                 assignTicket();
                 BiciU.mainMenu();
+                System.out.println("Borrow bicycle successful");
+                System.out.println(selectedBicycle);
+                System.out.println("\n---------------------------");
                 break;
             case "R":
                 selectedBicycle = getRoadBicycle();
                 updateBicycleState(selectedBicycle);
                 assignTicket();
                 BiciU.mainMenu();
+                System.out.println("Borrow bicycle successful");
+                System.out.println(selectedBicycle);
+                System.out.println("\n---------------------------");
                 break;
             default:
                 returnBicycleType();
@@ -111,7 +117,6 @@ public class BorrowBicycle {
             }
         }
         IO.updateBicycle(bicycles);
-
     }
 
 }

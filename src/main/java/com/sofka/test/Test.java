@@ -1,6 +1,7 @@
 package com.sofka.test;
 
 import com.sofka.entities.Bicycle;
+import com.sofka.menu.BiciU;
 import com.sofka.menu.BorrowBicycle;
 import com.sofka.menu.ReturnBicycle;
 import com.sofka.utils.IO.IO;
@@ -160,8 +161,12 @@ public class Test {
          */
         //IO.writeBicycle(bicycles);
         //System.out.println(IO.readBicycles());
+
+        //System.out.println(IO.readTickets());
+        //System.out.println(IO.readUser());
+        BiciU.mainMenu();
         //new ReturnBicycle().menu();
-        System.out.println(IO.readTickets());
+        //System.out.println(IO.readTickets());
         //new BorrowBicycle().menu();
 
     }

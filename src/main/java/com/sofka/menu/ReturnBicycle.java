@@ -15,18 +15,23 @@ import java.util.Scanner;
 public class ReturnBicycle {
     ArrayList<Ticket> tickets = IO.readTickets();
     ArrayList<Bicycle> bicycles = IO.readBicycles();
-    ArrayList<User> users = IO.readUser();
+    Ticket ticket;
     //Instantiates filter class to execute filters
     Filter<Bicycle> filter = new Filter<>();
+    Bicycle bicycle;
     String inputId;
     public void menu(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Insert ticket id: ");
         String inputTicketId = scanner.nextLine();
+        scanner.nextLine();
+        filter.filterTicketById(tickets, inputTicketId);
         for (Ticket t:tickets) {
             if (t.getId().equalsIgnoreCase(inputTicketId)) {
+                System.out.println("Insert if have helmet (true - false): ");
                 boolean haveHelmet =scanner.nextBoolean();
                 scanner.nextLine();
+                System.out.println("Insert is in good condition (true - false): ");
                 boolean isInGoodCondition = scanner.nextBoolean();
                 scanner.nextLine();
                 String startTime = t.getStartTime();
@@ -39,15 +44,20 @@ public class ReturnBicycle {
                 t.setHaveHelmet(haveHelmet);
                 t.confirmStatus();
                 //Change status of Bicycle
-                updateBicycleState(t.getBicycle());
-            }else {
-                System.out.println("The ticket id inserted doesn't exist");
-                BiciU.mainMenu();
+                bicycle = t.getBicycle();
+                ticket = t;
+
             }
         }
+        updateBicycleState(bicycle);
+        ticket.setBicycle(bicycle);
         IO.updateTickets(tickets);
+        System.out.println("Bicycle return successful\n" +
+                "-----------------------\n");
+        BiciU.mainMenu();
 
     }
+
     private void updateBicycleState(Bicycle bicycle){
         for (Bicycle b:bicycles) {
             if(b.getId().equalsIgnoreCase(bicycle.getId())){

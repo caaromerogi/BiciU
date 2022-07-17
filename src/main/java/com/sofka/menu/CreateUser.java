@@ -7,9 +7,9 @@ import com.sofka.entities.abstractclasses.User;
 import java.util.Scanner;
 
 public class CreateUser {
+    Scanner scanner = new Scanner(System.in);
+    public void menu(){
 
-    public static void menu(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce S for Student or P for Professor");
         String optionInput = scanner.nextLine();
         switch (optionInput.toUpperCase()) {
@@ -22,10 +22,12 @@ public class CreateUser {
                 String sAge = scanner.nextLine();
                 //Instantiates a student
                 User student = new Student(sDNI, sName, sAge);
-                System.out.println(student.getId());
                 //write object in txt
                 IO.writeUser(student);
-                System.out.println("Usurio registrado correctamente");
+                System.out.println("Register completed!\n");
+                System.out.println(student+"\n"+
+                        "-----------------------");
+
                 BiciU.mainMenu();
                 break;
             case "P":
@@ -39,7 +41,9 @@ public class CreateUser {
                 User professor = new Professor(pDNI, pName, pAge);
                 //Write object in txt
                 IO.writeUser(professor);
-                System.out.println("Usuario registrado correctamente");
+                System.out.println("Register completed\n");
+                System.out.println(professor+"\n" +
+                        "-----------------------");
                 BiciU.mainMenu();
                 break;
             default:
