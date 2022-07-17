@@ -2,12 +2,10 @@ package com.sofka.menu;
 
 import com.sofka.entities.Bicycle;
 import com.sofka.entities.Ticket;
-import com.sofka.entities.abstractclasses.User;
 import com.sofka.utils.IO.IO;
 import com.sofka.utils.filter.Filter;
 import com.sofka.utils.hourmeter.HourMeter;
 
-import javax.crypto.SealedObject;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,7 +52,7 @@ public class ReturnBicycle {
         IO.updateTickets(tickets);
         System.out.println("Bicycle return successful\n" +
                 "-----------------------\n");
-        BiciU.mainMenu();
+        BiciUMenu.mainMenu();
 
     }
 

@@ -28,7 +28,7 @@ public class CreateUser {
                 System.out.println(student+"\n"+
                         "-----------------------");
 
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 break;
             case "P":
                 System.out.println("Introduce your DNI:");
@@ -44,7 +44,7 @@ public class CreateUser {
                 System.out.println("Register completed\n");
                 System.out.println(professor+"\n" +
                         "-----------------------");
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 break;
             default:
                 menu();

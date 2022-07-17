@@ -22,17 +22,17 @@ public class TicketHistory {
             case "5.1":
                 tableAllTickets();
                 System.out.println("--------------------");
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 break;
             case "5.2":
                 tableSearchByCode();
                 System.out.println("--------------------");
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 break;
             case "5.3":
                 tableSearchByStatus();
                 System.out.println("--------------------");
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 break;
             default:
                 menu();

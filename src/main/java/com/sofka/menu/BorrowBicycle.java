@@ -33,11 +33,11 @@ public class BorrowBicycle {
             {
                 System.out.println("You have a doubt. Ticket ID: "+ t.getId()+
                         "\nAmount: "+ t.getAmount());
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
             }
             else if (t.getUser().getId().equalsIgnoreCase(inputId) && t.getStatus().equalsIgnoreCase("active")) {
                 System.out.println("You have an active bicycle, please return it back to continue");
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
             }
         }
         returnBicycleType();
@@ -52,7 +52,7 @@ public class BorrowBicycle {
                 selectedBicycle = getMountainBicycle();
                 updateBicycleState(selectedBicycle);
                 assignTicket();
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 System.out.println("Borrow bicycle successful");
                 System.out.println(selectedBicycle);
                 System.out.println("\n---------------------------");
@@ -61,7 +61,7 @@ public class BorrowBicycle {
                 selectedBicycle = getRoadBicycle();
                 updateBicycleState(selectedBicycle);
                 assignTicket();
-                BiciU.mainMenu();
+                BiciUMenu.mainMenu();
                 System.out.println("Borrow bicycle successful");
                 System.out.println(selectedBicycle);
                 System.out.println("\n---------------------------");

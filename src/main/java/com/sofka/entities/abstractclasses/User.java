@@ -18,12 +18,9 @@ public abstract class User implements Serializable  {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", DNI='" + DNI + '\'' +
-                ", name='" + name + '\'' +
-                ", age='" + age + '\'' +
-                '}';
+        return "ID = " + id + '\n' +
+                "DNI = " + DNI + '\n' +
+                "Age = " + age;
     }
 
     protected abstract void setId();

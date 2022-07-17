@@ -18,10 +18,8 @@ public class HourMeter {
             diff = dateFinish.getTime() - dateStart.getTime();
             String hm = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toHours(diff),
                     TimeUnit.MILLISECONDS.toMinutes(diff) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(diff)));
-            System.out.println(hm);
 
             hr = (int) Math.floor((((int) diff) - 60000) / 1800000);
-            System.out.println(hr);
 
         } catch (ParseException e) {
             throw new RuntimeException(e);

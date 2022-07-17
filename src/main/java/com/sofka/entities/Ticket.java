@@ -31,18 +31,16 @@ public class Ticket implements Serializable {
 
     @Override
     public String toString() {
-        return "Ticket{" +
-                "id='" + id + '\'' +
-                ", bicycle=" + bicycle +
-                ", user=" + user +
-                ", date='" + date + '\'' +
-                ", startTime='" + startTime + '\'' +
-                ", endTime='" + endTime + '\'' +
-                ", haveHelmet=" + haveHelmet +
-                ", isInGoodCondition=" + isInGoodCondition +
-                ", status='" + status + '\'' +
-                ", amount=" + amount +
-                '}';
+        return "Code = " + id + '\n' +
+                "Bicycle = " + bicycle.getId()+"\n"  +
+                "User = " + user.getName() + "\n"+
+                "Date = " + date + '\n' +
+                "Start Time = " + startTime + '\n' +
+                "EndTime = " + endTime + '\n' +
+                "Have Helmet = " + haveHelmet + "\n"+
+                "Good Condition = " + isInGoodCondition +"\n" +
+                "Status = " + status + '\n' +
+                "Amount = " + amount;
     }
 
 

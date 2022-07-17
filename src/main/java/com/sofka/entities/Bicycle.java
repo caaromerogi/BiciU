@@ -19,12 +19,9 @@ public class Bicycle implements Serializable {
 
     @Override
     public String toString() {
-        return "Bicycle{" +
-                "id='" + id + '\'' +
-                ", type='" + type + '\'' +
-                ", color='" + color + '\'' +
-                ", isAvailable=" + isAvailable +
-                '}';
+        return "Code ='" + id + '\n' +
+                ", Type='" + type + '\n' +
+                ", Color='" + color + '\n';
     }
 
     public String getId() {

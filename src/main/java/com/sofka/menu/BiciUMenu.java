@@ -2,7 +2,7 @@ package com.sofka.menu;
 
 import java.util.Scanner;
 
-public class BiciU {
+public class BiciUMenu {
 
     public static void mainMenu(){
         System.out.println("Bici-U Main Menu\n" +

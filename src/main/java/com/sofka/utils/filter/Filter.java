@@ -2,7 +2,7 @@ package com.sofka.utils.filter;
 
 import com.sofka.entities.Ticket;
 import com.sofka.entities.abstractclasses.User;
-import com.sofka.menu.BiciU;
+import com.sofka.menu.BiciUMenu;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -32,7 +32,7 @@ public class Filter<T> {
             }
         }
         System.out.println("The user id inserted doesn't exist");
-        BiciU.mainMenu();
+        BiciUMenu.mainMenu();
         return null;
     }
 
@@ -45,7 +45,7 @@ public class Filter<T> {
             }
         }
         System.out.println("The ticket id inserted doesn't exist");
-        BiciU.mainMenu();
+        BiciUMenu.mainMenu();
         return null;
     }
 

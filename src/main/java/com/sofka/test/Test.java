@@ -1,58 +1,13 @@
+//IMPORTANT MESSAGE. THIS CLASS SHOULD BE IGNORED, THE PURPOSE WAS TEST EVERY PART OF THE CODE PREVIOUS INSERT
+
+
+
 package com.sofka.test;
-
-import com.sofka.entities.Bicycle;
-import com.sofka.menu.BiciU;
-import com.sofka.menu.BorrowBicycle;
-import com.sofka.menu.ReturnBicycle;
-import com.sofka.menu.TicketHistory;
-import com.sofka.utils.IO.IO;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 
 public class Test {
     public static void main(String[] args) {
-        //CreateUser createUser = new CreateUser();
-        //createUser.menu();
         /*
-        "BIC-01",Mountain",red",true
-        "BIC-02",Road",blue",true
-        "BIC-03",Mountain",green",true
-        "BIC-04",Mountain",yellow",true
-
-        "BIC-05",Road",purple",true
-        "BIC-06",Road",red",true
-        "BIC-07",Mountain",red",true
-        "BIC-08",Road",blue",true
-        "BIC-09",Mountain",blue",true
-
-        "BIC-10",Road",purple",true
-        "BIC-11",Road",yellow",true
-        "BIC-12",Mountain",blue",true
-        "BIC-13",Mountain",blue",true
-        "BIC-14",Mountain",red",true
-
-        "BIC-15",Road",yellow",true
-        "BIC-16",Road",yellow",true
-        "BIC-17",Road",red",true
-        "BIC-18",Mountain",blue",true
-        "BIC-19",Road",blue",true
-
-        "BIC-20",Mountain",purple",true
-        "BIC-21",Road",red",true
-        "BIC-22",Mountain",yellow",true
-        "BIC-23",Mountain",red",true
-        "BIC-24",Road",green",true
-        "BIC-25",Road",red",true
-         */
         ArrayList<Bicycle> bicycles = new ArrayList<>();
 
         Bicycle b1 = new Bicycle("BIC-01", "Mountain", "red", true);
@@ -128,7 +83,7 @@ public class Test {
         bicycles.add(b23);
         bicycles.add(b24);
         bicycles.add(b25);
-
+        */
 
 
 
@@ -162,10 +117,9 @@ public class Test {
          */
         //IO.writeBicycle(bicycles);
         //System.out.println(IO.readBicycles());
-
         //System.out.println(IO.readTickets());
         //System.out.println(IO.readUser());
-        BiciU.mainMenu();
+        //BiciU.mainMenu();
         //new TicketHistory().menu();
         //new ReturnBicycle().menu();
         //System.out.println(IO.readTickets());

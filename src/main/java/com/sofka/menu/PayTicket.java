@@ -20,7 +20,7 @@ public class PayTicket {
         System.out.println(ticket);
         if(ticket.getStatus().equals("active")){
             System.out.println("The ticket inserted is active, return the bicycle to continue");
-            BiciU.mainMenu();
+            BiciUMenu.mainMenu();
         }else {
             System.out.println("Do you want to pay the ticket? (Y/N):" );
             String payTicket = scanner.nextLine();
@@ -31,12 +31,12 @@ public class PayTicket {
                     System.out.println(IO.readTickets());
                     System.out.println("Ticked "+ticket.getId()+" paid");
                     System.out.println("-----------------------\n");
-                    BiciU.mainMenu();
+                    BiciUMenu.mainMenu();
                     break;
                 case "N":
                     System.out.println("\nReturning back to main menu...\n" +
                             "------------------------");
-                    BiciU.mainMenu();
+                    BiciUMenu.mainMenu();
                     break;
                 default :
                     menu();
