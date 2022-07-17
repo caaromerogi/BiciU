@@ -4,6 +4,7 @@ import com.sofka.entities.Bicycle;
 import com.sofka.menu.BiciU;
 import com.sofka.menu.BorrowBicycle;
 import com.sofka.menu.ReturnBicycle;
+import com.sofka.menu.TicketHistory;
 import com.sofka.utils.IO.IO;
 
 import java.text.ParseException;
@@ -165,6 +166,7 @@ public class Test {
         //System.out.println(IO.readTickets());
         //System.out.println(IO.readUser());
         BiciU.mainMenu();
+        //new TicketHistory().menu();
         //new ReturnBicycle().menu();
         //System.out.println(IO.readTickets());
         //new BorrowBicycle().menu();

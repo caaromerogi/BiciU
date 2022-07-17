@@ -29,10 +29,11 @@ public class BiciU {
                 new PayTicket().menu();
                 break;
             case "5":
-                //ticketsHistory();
+                new TicketHistory().menu();
                 break;
             case "6":
-                //"Exit";
+                System.out.println("See you later, bye!");
+                System.exit(0);
                 break;
             default :
                 mainMenu();

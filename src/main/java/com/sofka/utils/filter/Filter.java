@@ -48,4 +48,15 @@ public class Filter<T> {
         BiciU.mainMenu();
         return null;
     }
+
+    public ArrayList<T> filterTicket(ArrayList<T> array, Predicate<T> predicate) {
+        ArrayList<T> filteredArray = new ArrayList<T>();
+        for (T object : array) {
+            if (predicate.test(object)) {
+                filteredArray.add(object);
+            }
+        }
+
+        return filteredArray;
+    }
 }
