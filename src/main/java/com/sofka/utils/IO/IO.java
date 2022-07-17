@@ -27,6 +27,15 @@ public class IO {
         serializer.serialize(path, ticket);
     }
 
+    public static void writeTicketArray(ArrayList<Ticket> tickets){
+        String path = "src\\main\\resources\\data\\tickets\\tickets.txt";
+        Serializer<Ticket> serializer = new Serializer<Ticket>();
+        Iterator<Ticket> it = tickets.iterator();
+        for (Ticket t:tickets) {
+            serializer.serialize(path, t);
+        }
+    }
+
     //retorna el ticket
     public static ArrayList<Ticket> readTickets(){
         String path = "src\\main\\resources\\data\\tickets\\tickets.txt";
@@ -55,5 +64,13 @@ public class IO {
         file.delete();
 
         IO.writeBicycle(bicycles);
+    }
+
+    public static void updateTickets(ArrayList<Ticket> tickets){
+        String path = "src\\main\\resources\\data\\tickets\\tickets.txt";
+        File file = new File(path);
+        file.delete();
+
+        IO.writeTicketArray(tickets);
     }
 }

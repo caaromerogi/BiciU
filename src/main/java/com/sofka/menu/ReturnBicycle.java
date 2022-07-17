@@ -7,6 +7,7 @@ import com.sofka.utils.IO.IO;
 import com.sofka.utils.filter.Filter;
 import com.sofka.utils.hourmeter.HourMeter;
 
+import javax.crypto.SealedObject;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,6 +21,7 @@ public class ReturnBicycle {
     String inputId;
     public void menu(){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert ticket id: ");
         String inputTicketId = scanner.nextLine();
         for (Ticket t:tickets) {
             if (t.getId().equalsIgnoreCase(inputTicketId)) {
@@ -36,16 +38,22 @@ public class ReturnBicycle {
                 t.setInGoodCondition(isInGoodCondition);
                 t.setHaveHelmet(haveHelmet);
                 t.confirmStatus();
-
+                //Change status of Bicycle
+                updateBicycleState(t.getBicycle());
             }else {
                 System.out.println("The ticket id inserted doesn't exist");
                 BiciU.mainMenu();
             }
         }
+        IO.updateTickets(tickets);
 
-
-
-        //como llegó la cicla
-        //si tiene casco
+    }
+    private void updateBicycleState(Bicycle bicycle){
+        for (Bicycle b:bicycles) {
+            if(b.getId().equalsIgnoreCase(bicycle.getId())){
+                b.setAvailable(true);
+            }
+        }
+        IO.updateBicycle(bicycles);
     }
 }

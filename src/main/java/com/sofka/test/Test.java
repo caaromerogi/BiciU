@@ -2,6 +2,7 @@ package com.sofka.test;
 
 import com.sofka.entities.Bicycle;
 import com.sofka.menu.BorrowBicycle;
+import com.sofka.menu.ReturnBicycle;
 import com.sofka.utils.IO.IO;
 
 import java.text.ParseException;
@@ -159,7 +160,9 @@ public class Test {
          */
         //IO.writeBicycle(bicycles);
         //System.out.println(IO.readBicycles());
-        BorrowBicycle b = new BorrowBicycle();
-        b.menu();
+        //new ReturnBicycle().menu();
+        System.out.println(IO.readTickets());
+        //new BorrowBicycle().menu();
+
     }
 }
