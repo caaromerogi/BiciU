@@ -21,8 +21,8 @@ public class Bicycle implements Serializable {
     public String toString() {
         return "Code = " + id + '\n' +
                 "Type = " + type + '\n' +
-                "Color = " + color + '\n'+
-                "Activa = "+ isAvailable;
+                "Color = " + color + '\n'
+                ;
     }
 
     public String getId() {

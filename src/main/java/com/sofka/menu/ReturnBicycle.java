@@ -39,19 +39,16 @@ public class ReturnBicycle {
                 t.setInGoodCondition(isInGoodCondition);
                 t.setHaveHelmet(haveHelmet);
                 t.confirmStatus();
+                updateBicycleState(t.getBicycle());
+                ticket = t;
             }
         }
 
-
-        System.out.println(tickets);
-        System.out.println("despues de cambiar: "+IO.readTickets());
-
         IO.updateTickets(tickets);
-        System.out.println("Lector: "+IO.readTickets());
 
-        System.out.println("Lector 2: "+IO.readTickets());
-        //System.out.println("Bicycle " +ticket.getBicycle().getId()+  " returned successfully\n" +
-          //      "-----------------------\n");
+
+        System.out.println("Bicycle " +ticket.getBicycle().getId()+  " returned successfully\n" +
+                "-----------------------\n");
         BiciUMenu.mainMenu();
 
     }

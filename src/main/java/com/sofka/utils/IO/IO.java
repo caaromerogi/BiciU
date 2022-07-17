@@ -28,7 +28,6 @@ public class IO {
     }
 
     public static void writeTicketArray(ArrayList<Ticket> tickets){
-        System.out.println("IO writer : "+tickets);
         String path = "src\\main\\resources\\data\\tickets\\tickets.txt";
         Serializer<Ticket> serializer = new Serializer<Ticket>();
         Iterator<Ticket> it = tickets.iterator();
